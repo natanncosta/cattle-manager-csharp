@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CattleManager.Tests", "CattleManager.Tests\CattleManager.Tests.csproj", "{02421A2A-B78B-4C6F-9238-2C3C6ED75915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CattleManager.Web", "CattleManager.Web\CattleManager.Web.csproj", "{A7F1133A-7D38-4931-83D7-8AFC18720F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CattleManager.Infra", "CattleManager.Infra\CattleManager.Infra.csproj", "{435BDB70-B656-4831-8DC9-295880F7F715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CattleManager.Application", "CattleManager.Application\CattleManager.Application.csproj", "{9C6351FF-F655-4D64-A1C5-EFC6F6644CD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CattleManager.Domain", "CattleManager.Domain\CattleManager.Domain.csproj", "{B3F78C3D-A552-40C7-ABD2-D70BA1C52907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02421A2A-B78B-4C6F-9238-2C3C6ED75915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02421A2A-B78B-4C6F-9238-2C3C6ED75915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02421A2A-B78B-4C6F-9238-2C3C6ED75915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02421A2A-B78B-4C6F-9238-2C3C6ED75915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F1133A-7D38-4931-83D7-8AFC18720F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F1133A-7D38-4931-83D7-8AFC18720F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F1133A-7D38-4931-83D7-8AFC18720F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F1133A-7D38-4931-83D7-8AFC18720F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435BDB70-B656-4831-8DC9-295880F7F715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435BDB70-B656-4831-8DC9-295880F7F715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435BDB70-B656-4831-8DC9-295880F7F715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435BDB70-B656-4831-8DC9-295880F7F715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6351FF-F655-4D64-A1C5-EFC6F6644CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6351FF-F655-4D64-A1C5-EFC6F6644CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6351FF-F655-4D64-A1C5-EFC6F6644CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6351FF-F655-4D64-A1C5-EFC6F6644CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F78C3D-A552-40C7-ABD2-D70BA1C52907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F78C3D-A552-40C7-ABD2-D70BA1C52907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F78C3D-A552-40C7-ABD2-D70BA1C52907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F78C3D-A552-40C7-ABD2-D70BA1C52907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
