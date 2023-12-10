@@ -20,6 +20,6 @@ public class UserRepository : Repository<User>
         var query = _context.Set<User>().Where(x => x.Id == id);
         if (query.Any())
             return query.First();
-        return null;
+        return null!;
     }
 }

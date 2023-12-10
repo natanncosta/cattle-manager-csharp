@@ -25,8 +25,8 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     {
         var query = _context.Set<TEntity>().Where(x => x.Id == id);
         if (query.Any())
-            return query.FirstOrDefault();
-        return null;
+            return query.FirstOrDefault()!;
+        return null!;
     }
 
     public virtual void Save(TEntity entity)

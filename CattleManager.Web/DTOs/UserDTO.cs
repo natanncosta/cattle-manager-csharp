@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CattleManager.Web.DTOs;
+namespace CattleManager.DTOs;
 
 public class UserDTO
 {
