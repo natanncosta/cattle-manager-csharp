@@ -19,7 +19,7 @@ public class Startup
         services.AddControllers();
 
         services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IRepository<User>, UserRepository>();
         services.AddScoped<IUserService, UserService>();

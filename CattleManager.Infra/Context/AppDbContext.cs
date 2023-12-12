@@ -8,7 +8,7 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
-    public DbSet<User> Users { get; set; }
-    public DbSet<Cattle> Cattles { get; set; }
-    public DbSet<Terrain> Terrains { get; set; }
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Cattle> Cattles => Set<Cattle>();
+    public DbSet<Terrain> Terrains => Set<Terrain>();
 }
