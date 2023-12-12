@@ -1,17 +1,21 @@
+global using AutoMapper;
+
 using CattleManager.Domain.Models;
 using CattleManager.Domain.Interfaces;
-using CattleManager.Infra.Repositories;
-using CattleManager.Infra.Context;
 using CattleManager.Domain.DTOs;
 
 namespace CattleManager.Services;
 
 public class UserService : IUserService
 {
-    private readonly AppDbContext _repository;
+    private readonly IRepository<User> _repository;
+    private readonly IMapper _mapper;
 
-    public UserService(AppDbContext repository)
-        => _repository = repository;
+    public UserService(IRepository<User> repository, IMapper mapper)
+    {
+        _repository = repository;
+        _mapper = mapper;
+    }
 
     public void Add(User user)
     {
@@ -22,7 +26,7 @@ public class UserService : IUserService
 
     public IEnumerable<GetUserDTO> GetAll()
     {
-        throw new NotImplementedException();
+        return _repository.GetAll().Select(x => _mapper.Map<GetUserDTO>(x));
     }
 
     public User GetById(int id)

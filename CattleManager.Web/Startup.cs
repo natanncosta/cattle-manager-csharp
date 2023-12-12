@@ -16,6 +16,7 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddAutoMapper(typeof(Program).Assembly);
         services.AddControllers();
 
         services.AddDbContext<AppDbContext>(options =>
@@ -24,12 +25,6 @@ public class Startup
         services.AddScoped<IRepository<User>, UserRepository>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-        // services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-        // services.AddScoped(typeof(IRepository<User>), typeof(UserRepository));
-        // services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-        // services.AddScoped(typeof(IUserService), typeof(UserService));
-        // services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
         services.AddSwaggerGen(c =>
         {
