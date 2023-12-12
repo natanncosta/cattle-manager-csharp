@@ -2,6 +2,7 @@ using CattleManager.Domain.Models;
 using CattleManager.Domain.Interfaces;
 using CattleManager.Infra.Repositories;
 using CattleManager.Infra.Context;
+using CattleManager.Domain.DTOs;
 
 namespace CattleManager.Services;
 
@@ -19,7 +20,7 @@ public class UserService : IUserService
         // _repository.Users.;
     }
 
-    public IEnumerable<User> GetAll()
+    public IEnumerable<GetUserDTO> GetAll()
     {
         throw new NotImplementedException();
     }

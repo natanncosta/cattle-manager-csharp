@@ -1,3 +1,5 @@
+using CattleManager.Domain.DTOs;
+
 namespace CattleManager.Web.Controllers;
 
 [ApiController]
@@ -5,18 +7,18 @@ namespace CattleManager.Web.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserService _service;
-    private readonly IRepository<User> _repository;
+    private readonly IRepository<User> repository;
 
     public UserController(IUserService service, IRepository<User> repository)
     {
         _service = service;
-        _repository = repository;
+        this.repository = repository;
     }
 
 
     [HttpGet]
-    public ActionResult<IEnumerable<User>> GetAll()
+    public ActionResult<IEnumerable<GetUserDTO>> GetAll()
     {
-        return new List<User>();
+        return Ok(_service.GetAll());
     }
 }

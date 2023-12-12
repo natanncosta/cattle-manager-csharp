@@ -13,6 +13,7 @@ public class User : BaseEntity
     public void ValidParams(string name)
     {
         if (string.IsNullOrEmpty(name))
-            throw new InvalidOperationException("Name is invalid");
+            throw new Exception("invalid name");
     }
 }
+
