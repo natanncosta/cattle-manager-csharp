@@ -1,3 +1,5 @@
+using CattleManager.Domain.DTOs.User;
+
 namespace CattleManager.Web.Controllers;
 
 [ApiController]
@@ -14,8 +16,11 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll() => Ok(_service.GetAll());
+    public ActionResult<IEnumerable<GetUserDTO>> GetAll() => Ok(_service.GetAll());
 
     [HttpGet("{id}")]
-    public IActionResult GetById(int id) => Ok(_service.GetById(id));
+    public ActionResult<GetUserDTO> GetById(int id) => Ok(_service.GetById(id));
+
+    [HttpPost]
+    public ActionResult<AddUserDTO> Add([FromBody] AddUserDTO newUser) => Ok(_service.Add(newUser));
 }

@@ -17,26 +17,13 @@ public class UserService : IUserService
         _mapper = mapper;
     }
 
-    public void Add(User user)
+    public AddUserDTO Add(AddUserDTO newUser)
     {
-        UserExists(user.Id);
-        // _repository.Save(user);
-        // _repository.Users.;
+        _repository.Save(new User(newUser.Name));
+        return newUser;
     }
 
-    public IEnumerable<GetUserDTO> GetAll()
-    {
-        return _repository.GetAll().Select(x => _mapper.Map<GetUserDTO>(x));
-    }
+    public IEnumerable<GetUserDTO> GetAll() => _repository.GetAll().Select(x => _mapper.Map<GetUserDTO>(x));
 
-    public GetUserDTO GetById(int id)
-    {
-        return _mapper.Map<GetUserDTO>(_repository.GetById(id));
-    }
-
-    private void UserExists(int id)
-    {
-        // if (_repository.GetById(id) != null)
-        throw new Exception("User already exists");
-    }
+    public GetUserDTO GetById(int id) => _mapper.Map<GetUserDTO>(_repository.GetById(id));
 }
