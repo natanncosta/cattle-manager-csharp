@@ -7,5 +7,5 @@ public interface IUserService
 {
     void Add(User user);
     IEnumerable<GetUserDTO> GetAll();
-    User GetById(int id);
+    GetUserDTO GetById(int id);
 }

@@ -29,9 +29,9 @@ public class UserService : IUserService
         return _repository.GetAll().Select(x => _mapper.Map<GetUserDTO>(x));
     }
 
-    public User GetById(int id)
+    public GetUserDTO GetById(int id)
     {
-        throw new NotImplementedException();
+        return _mapper.Map<GetUserDTO>(_repository.GetById(id));
     }
 
     private void UserExists(int id)

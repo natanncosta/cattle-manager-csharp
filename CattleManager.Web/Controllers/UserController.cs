@@ -1,5 +1,3 @@
-using CattleManager.Domain.DTOs.User;
-
 namespace CattleManager.Web.Controllers;
 
 [ApiController]
@@ -15,10 +13,9 @@ public class UserController : ControllerBase
         this.repository = repository;
     }
 
-
     [HttpGet]
-    public ActionResult<IEnumerable<GetUserDTO>> GetAll()
-    {
-        return Ok(_service.GetAll());
-    }
+    public IActionResult GetAll() => Ok(_service.GetAll());
+
+    [HttpGet("{id}")]
+    public IActionResult GetById(int id) => Ok(_service.GetById(id));
 }
