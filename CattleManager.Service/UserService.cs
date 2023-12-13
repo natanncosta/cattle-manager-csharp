@@ -2,7 +2,7 @@ global using AutoMapper;
 
 using CattleManager.Domain.Models;
 using CattleManager.Domain.Interfaces;
-using CattleManager.Domain.DTOs;
+using CattleManager.Domain.DTOs.User;
 
 namespace CattleManager.Services;
 

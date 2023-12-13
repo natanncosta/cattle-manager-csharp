@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CattleManager.Domain.DTOs;
+namespace CattleManager.Domain.DTOs.User;
 
 public class GetUserDTO
 {

@@ -1,4 +1,4 @@
-using CattleManager.Domain.DTOs;
+using CattleManager.Domain.DTOs.User;
 using CattleManager.Domain.Models;
 
 namespace CattleManager.Domain.Interfaces;
