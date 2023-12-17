@@ -8,7 +8,12 @@ public class Cattle : BaseEntity
     public int TerrainId { get; private set; }
     public int UserId { get; private set; }
 
-    public Cattle(string name, string earring, int terrainId, int userId, Gender gender)
+    public Cattle(
+        string name,
+        string earring,
+        int terrainId,
+        int userId,
+        Gender gender)
     {
         Name = name;
         Earring = earring;
