@@ -14,15 +14,15 @@ public class TerrainController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Terrain> Add([FromBody] Terrain terrain)
+    public ActionResult<ServiceResponse<Terrain>> Add([FromBody] Terrain terrain)
         => Ok(_service.Add(terrain));
 
     [HttpGet]
-    public ActionResult<IEnumerable<Terrain>> GetAll()
+    public ActionResult<ServiceResponse<List<Terrain>>> GetAll()
         => Ok(_service.GetAll());
 
     [HttpGet("{id}")]
-    public ActionResult<Terrain> GetById(int id)
+    public ActionResult<ServiceResponse<Terrain>> GetById(int id)
         => Ok(_service.GetById(id));
 }
 

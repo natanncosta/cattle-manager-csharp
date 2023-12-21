@@ -14,15 +14,8 @@ public class CattleController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Cattle> Add([FromBody] Cattle cattle)
+    public ActionResult<ServiceResponse<Cattle>> Add([FromBody] Cattle cattle)
     {
-        try
-        {
-            return Ok(_service.Add(cattle));
-        }
-        catch (System.Exception e)
-        {
-            return BadRequest(e.Message);
-        }
+        return Ok(_service.Add(cattle));
     }
 }

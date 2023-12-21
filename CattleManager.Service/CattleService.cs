@@ -16,10 +16,22 @@ public class CattleService : ICattleService
         _terrainService = terrainService;
     }
 
-    public Cattle Add(Cattle cattle)
+    public ServiceResponse<Cattle> Add(Cattle cattle)
     {
-        DoValidations(cattle);
-        _repository.Save(cattle); return cattle;
+        ServiceResponse<Cattle> serviceResponse = new();
+        serviceResponse.Data = cattle;
+        try
+        {
+            DoValidations(cattle);
+            _repository.Save(cattle);
+            return serviceResponse;
+        }
+        catch (Exception e)
+        {
+            serviceResponse.Message = e.Message;
+            serviceResponse.Success = false;
+            return serviceResponse;
+        }
     }
 
     private void DoValidations(Cattle cattle)

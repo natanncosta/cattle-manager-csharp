@@ -4,5 +4,5 @@ namespace CattleManager.Domain.Interfaces;
 
 public interface ICattleService
 {
-    public Cattle Add(Cattle cattle);
+    public ServiceResponse<Cattle> Add(Cattle cattle);
 }

@@ -4,7 +4,7 @@ namespace CattleManager.Domain.Interfaces;
 
 public interface IUserService
 {
-    User Add(User newUser);
-    IEnumerable<User> GetAll();
-    User GetById(int id);
+    ServiceResponse<User> Add(User newUser);
+    ServiceResponse<List<User>> GetAll();
+    ServiceResponse<User> GetById(int id);
 }

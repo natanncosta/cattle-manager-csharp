@@ -4,7 +4,7 @@ namespace CattleManager.Domain.Interfaces;
 
 public interface ITerrainService
 {
-    public Terrain Add(Terrain terrain);
-    public IEnumerable<Terrain> GetAll();
-    public Terrain GetById(int id);
+    ServiceResponse<Terrain> Add(Terrain terrain);
+    ServiceResponse<List<Terrain>> GetAll();
+    ServiceResponse<Terrain> GetById(int id);
 }

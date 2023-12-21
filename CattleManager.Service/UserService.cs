@@ -18,15 +18,29 @@ public class UserService : IUserService
         _mapper = mapper;
     }
 
-    public User Add(User newUser)
+    public ServiceResponse<User> Add(User newUser)
     {
         _repository.Save(newUser);
-        return newUser;
+        return new ServiceResponse<User>
+        {
+            Data = newUser,
+            Message = "Created with success"
+        };
     }
 
-    public IEnumerable<User> GetAll()
-        => _repository.GetAll();
+    public ServiceResponse<List<User>> GetAll()
+    {
+        return new ServiceResponse<List<User>>
+        {
+            Data = _repository.GetAll().ToList()
+        };
+    }
 
-    public User GetById(int id)
-        => _repository.GetById(id);
+    public ServiceResponse<User> GetById(int id)
+    {
+        return new ServiceResponse<User>
+        {
+            Data = _repository.GetById(id)
+        };
+    }
 }
