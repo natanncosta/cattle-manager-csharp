@@ -24,8 +24,12 @@ public class Startup
 
         services.AddScoped<IRepository<User>, UserRepository>();
         services.AddScoped<IRepository<Terrain>, TerrainRepository>();
+        services.AddScoped<IRepository<Cattle>, CattleRepository>();
+
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<ITerrainService, TerrainService>();
+        services.AddScoped<ICattleService, CattleService>();
+
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddSwaggerGen(c =>
