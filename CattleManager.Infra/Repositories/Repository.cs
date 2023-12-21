@@ -32,5 +32,6 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     public virtual void Save(TEntity entity)
     {
         _context.Set<TEntity>().Add(entity);
+        _context.SaveChangesAsync();
     }
 }

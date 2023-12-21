@@ -1,10 +1,10 @@
-using CattleManager.Domain.DTOs.User;
+using CattleManager.Domain.Models;
 
 namespace CattleManager.Domain.Interfaces;
 
 public interface IUserService
 {
-    AddUserDTO Add(AddUserDTO newUser);
-    IEnumerable<GetUserDTO> GetAll();
-    GetUserDTO GetById(int id);
+    User Add(User newUser);
+    IEnumerable<User> GetAll();
+    User GetById(int id);
 }
