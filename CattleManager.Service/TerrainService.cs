@@ -15,4 +15,7 @@ public class TerrainService : ITerrainService
         _repository.Save(terrain);
         return terrain;
     }
+
+    public IEnumerable<Terrain> GetAll()
+        => _repository.GetAll();
 }

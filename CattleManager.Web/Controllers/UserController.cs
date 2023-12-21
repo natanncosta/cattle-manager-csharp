@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using CattleManager.Domain.Interfaces;
+using CattleManager.Domain.Models;
+using Microsoft.AspNetCore.Mvc;
+
 namespace CattleManager.Web.Controllers;
 
 [ApiController]
@@ -20,5 +25,9 @@ public class UserController : ControllerBase
     public ActionResult<User> GetById(int id) => Ok(_service.GetById(id));
 
     [HttpPost]
-    public ActionResult<User> Add([FromBody] User newUser) => Ok(_service.Add(newUser));
+    public ActionResult<User> Add([FromBody] User newUser)
+    {
+        BadRequest();
+        return Ok(_service.Add(newUser));
+    }
 }

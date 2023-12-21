@@ -2,7 +2,7 @@ namespace CattleManager.Web.Controllers;
 
 [ApiController]
 [Route("api/terrain")]
-public class TerrainController
+public class TerrainController : ControllerBase
 {
     private readonly IRepository<Terrain> _repository;
     private readonly ITerrainService _service;
@@ -15,5 +15,10 @@ public class TerrainController
 
     [HttpPost]
     public ActionResult<Terrain> Add([FromBody] Terrain terrain)
-        => _service.Add(terrain);
+        => Ok(_service.Add(terrain));
+
+    [HttpGet]
+    public ActionResult<IEnumerable<Terrain>> GetAll()
+        => Ok(_service.GetAll());
 }
+
