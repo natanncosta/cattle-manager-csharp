@@ -1,8 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using CattleManager.Domain.Interfaces;
-using CattleManager.Domain.Models;
-using Microsoft.AspNetCore.Mvc;
-
 namespace CattleManager.Web.Controllers;
 
 [ApiController]

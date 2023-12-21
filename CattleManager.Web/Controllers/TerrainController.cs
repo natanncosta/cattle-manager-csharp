@@ -20,5 +20,9 @@ public class TerrainController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Terrain>> GetAll()
         => Ok(_service.GetAll());
+
+    [HttpGet("{id}")]
+    public ActionResult<Terrain> GetById(int id)
+        => Ok(_service.GetById(id));
 }
 

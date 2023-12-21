@@ -18,4 +18,7 @@ public class TerrainService : ITerrainService
 
     public IEnumerable<Terrain> GetAll()
         => _repository.GetAll();
+
+    public Terrain GetById(int id)
+        => _repository.GetById(id);
 }
