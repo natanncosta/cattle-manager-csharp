@@ -23,7 +23,9 @@ public class Startup
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IRepository<User>, UserRepository>();
+        services.AddScoped<IRepository<Terrain>, TerrainRepository>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<ITerrainService, TerrainService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddSwaggerGen(c =>
