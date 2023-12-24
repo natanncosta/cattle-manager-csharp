@@ -14,15 +14,14 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<ServiceResponse<List<User>>> GetAll() => Ok(_service.GetAll());
+    public ActionResult<ServiceResponse<List<User>>> GetAll()
+        => Ok(_service.GetAll());
 
     [HttpGet("{id}")]
-    public ActionResult<ServiceResponse<User>> GetById(int id) => Ok(_service.GetById(id));
+    public ActionResult<ServiceResponse<User>> GetById(int id)
+        => Ok(_service.GetById(id));
 
     [HttpPost]
     public ActionResult<ServiceResponse<User>> Add([FromBody] User newUser)
-    {
-        BadRequest();
-        return Ok(_service.Add(newUser));
-    }
+        => Ok(_service.Add(newUser));
 }

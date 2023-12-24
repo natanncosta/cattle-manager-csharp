@@ -21,6 +21,9 @@ public class TerrainService : ITerrainService
 
     public ServiceResponse<Terrain> GetById(int id)
     {
-        return new ServiceResponse<Terrain>(_repository.GetById(id));
+        var terrain = _repository.GetById(id);
+        if (terrain is null)
+            return new ServiceResponse<Terrain>(success: false, message: "Terrain not found");
+        return new ServiceResponse<Terrain>(terrain);
     }
 }

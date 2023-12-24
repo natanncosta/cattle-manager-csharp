@@ -15,7 +15,5 @@ public class CattleController : ControllerBase
 
     [HttpPost]
     public ActionResult<ServiceResponse<Cattle>> Add([FromBody] Cattle cattle)
-    {
-        return Ok(_service.Add(cattle));
-    }
+        => Ok(_service.Add(cattle));
 }
