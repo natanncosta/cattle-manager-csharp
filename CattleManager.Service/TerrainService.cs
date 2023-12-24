@@ -13,22 +13,14 @@ public class TerrainService : ITerrainService
     public ServiceResponse<Terrain> Add(Terrain terrain)
     {
         _repository.Save(terrain);
-        return new ServiceResponse<Terrain> { Data = terrain };
+        return new ServiceResponse<Terrain>(terrain);
     }
 
     public ServiceResponse<List<Terrain>> GetAll()
-    {
-        return new ServiceResponse<List<Terrain>>
-        {
-            Data = _repository.GetAll().ToList()
-        };
-    }
+        => new ServiceResponse<List<Terrain>>(_repository.GetAll().ToList());
 
     public ServiceResponse<Terrain> GetById(int id)
     {
-        return new ServiceResponse<Terrain>
-        {
-            Data = _repository.GetById(id)
-        };
+        return new ServiceResponse<Terrain>(_repository.GetById(id));
     }
 }

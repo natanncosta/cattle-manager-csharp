@@ -29,18 +29,10 @@ public class UserService : IUserService
     }
 
     public ServiceResponse<List<User>> GetAll()
-    {
-        return new ServiceResponse<List<User>>
-        {
-            Data = _repository.GetAll().ToList()
-        };
-    }
+        => new ServiceResponse<List<User>>(_repository.GetAll().ToList());
 
     public ServiceResponse<User> GetById(int id)
     {
-        return new ServiceResponse<User>
-        {
-            Data = _repository.GetById(id)
-        };
+        return new ServiceResponse<User>(_repository.GetById(id));
     }
 }

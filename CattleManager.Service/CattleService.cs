@@ -18,19 +18,15 @@ public class CattleService : ICattleService
 
     public ServiceResponse<Cattle> Add(Cattle cattle)
     {
-        ServiceResponse<Cattle> serviceResponse = new();
-        serviceResponse.Data = cattle;
         try
         {
             DoValidations(cattle);
             _repository.Save(cattle);
-            return serviceResponse;
+            return new ServiceResponse<Cattle>(cattle);
         }
         catch (Exception e)
         {
-            serviceResponse.Message = e.Message;
-            serviceResponse.Success = false;
-            return serviceResponse;
+            return new ServiceResponse<Cattle>(false, e.Message);
         }
     }
 
