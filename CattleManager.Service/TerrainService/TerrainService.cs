@@ -1,7 +1,4 @@
-using CattleManager.Domain.Interfaces;
-using CattleManager.Domain.Models;
-
-namespace CattleManager.Services;
+namespace CattleManager.Services.TerrainService;
 
 public class TerrainService : ITerrainService
 {

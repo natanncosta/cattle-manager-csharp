@@ -1,6 +1,4 @@
-using CattleManager.Domain.Models;
-
-namespace CattleManager.Domain.Interfaces;
+namespace CattleManager.Services.UserService;
 
 public interface IUserService
 {

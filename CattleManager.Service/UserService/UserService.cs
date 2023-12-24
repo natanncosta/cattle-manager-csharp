@@ -1,9 +1,4 @@
-global using AutoMapper;
-
-using CattleManager.Domain.Models;
-using CattleManager.Domain.Interfaces;
-
-namespace CattleManager.Services;
+namespace CattleManager.Services.UserService;
 
 public class UserService : IUserService
 {

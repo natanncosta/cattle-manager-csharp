@@ -1,6 +1,5 @@
 using CattleManager.Infra.Context;
 using CattleManager.Infra.Repositories;
-using CattleManager.Services;
 using Microsoft.OpenApi.Models;
 
 namespace CattleManager.Web;
