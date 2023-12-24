@@ -5,13 +5,16 @@ namespace CattleManager.Services;
 
 public class TerrainService : ITerrainService
 {
-    private readonly IRepository<Terrain> _repository;
+    private readonly ITerrainRepository _repository;
 
-    public TerrainService(IRepository<Terrain> repository)
+    public TerrainService(ITerrainRepository repository)
         => _repository = repository;
 
     public ServiceResponse<Terrain> Add(Terrain terrain)
     {
+        bool terrainExists = _repository.GetByName(terrain.Description) is not null;
+        if (terrainExists)
+            return new ServiceResponse<Terrain>(success: false, message: "Terrain already exists");
         _repository.Save(terrain);
         return new ServiceResponse<Terrain>(terrain);
     }

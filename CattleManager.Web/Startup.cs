@@ -23,7 +23,7 @@ public class Startup
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IRepository<User>, UserRepository>();
-        services.AddScoped<IRepository<Terrain>, TerrainRepository>();
+        services.AddScoped<ITerrainRepository, TerrainRepository>();
         services.AddScoped<IRepository<Cattle>, CattleRepository>();
 
         services.AddScoped<IUserService, UserService>();

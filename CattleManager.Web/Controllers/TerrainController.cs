@@ -4,10 +4,10 @@ namespace CattleManager.Web.Controllers;
 [Route("api/terrain")]
 public class TerrainController : ControllerBase
 {
-    private readonly IRepository<Terrain> _repository;
+    private readonly ITerrainRepository _repository;
     private readonly ITerrainService _service;
 
-    public TerrainController(IRepository<Terrain> repository, ITerrainService service)
+    public TerrainController(ITerrainRepository repository, ITerrainService service)
     {
         _repository = repository;
         _service = service;
