@@ -2,7 +2,6 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.AspNetCore.Mvc;
 
 // Domain 
-global using CattleManager.Domain.Interfaces;
 global using CattleManager.Domain.Models;
 
 // Services 

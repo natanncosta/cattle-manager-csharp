@@ -5,11 +5,11 @@ namespace CattleManager.Services.CattleService;
 
 public class CattleService : ICattleService
 {
-    private readonly IRepository<Cattle> _repository;
+    private readonly ICattleRepository _repository;
     private readonly IUserService _userService;
     private readonly ITerrainService _terrainService;
 
-    public CattleService(IRepository<Cattle> repository, IUserService userService, ITerrainService terrainService)
+    public CattleService(ICattleRepository repository, IUserService userService, ITerrainService terrainService)
     {
         _repository = repository;
         _userService = userService;

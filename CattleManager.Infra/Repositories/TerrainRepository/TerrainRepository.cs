@@ -1,8 +1,6 @@
-using CattleManager.Domain.Models;
-using CattleManager.Domain.Interfaces;
 using CattleManager.Infra.Context;
 
-namespace CattleManager.Infra.Repositories;
+namespace CattleManager.Infra.Repositories.TerrainRepository;
 
 public class TerrainRepository : ITerrainRepository
 {

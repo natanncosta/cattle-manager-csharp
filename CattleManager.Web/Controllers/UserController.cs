@@ -1,3 +1,5 @@
+using CattleManager.Infra.Repositories.UserRepository;
+
 namespace CattleManager.Web.Controllers;
 
 [ApiController]
@@ -5,9 +7,9 @@ namespace CattleManager.Web.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserService _service;
-    private readonly IRepository<User> repository;
+    private readonly IUserRepository repository;
 
-    public UserController(IUserService service, IRepository<User> repository)
+    public UserController(IUserService service, IUserRepository repository)
     {
         _service = service;
         this.repository = repository;

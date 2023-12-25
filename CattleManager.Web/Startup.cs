@@ -1,5 +1,7 @@
 using CattleManager.Infra.Context;
-using CattleManager.Infra.Repositories;
+using CattleManager.Infra.Repositories.TerrainRepository;
+using CattleManager.Infra.Repositories.UserRepository;
+using CattleManager.Infra.Repositories.CattleRepository;
 using Microsoft.OpenApi.Models;
 
 namespace CattleManager.Web;
@@ -21,15 +23,13 @@ public class Startup
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-        services.AddScoped<IRepository<User>, UserRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ITerrainRepository, TerrainRepository>();
-        services.AddScoped<IRepository<Cattle>, CattleRepository>();
+        services.AddScoped<ICattleRepository, CattleRepository>();
 
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<ITerrainService, TerrainService>();
         services.AddScoped<ICattleService, CattleService>();
-
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddSwaggerGen(c =>
         {

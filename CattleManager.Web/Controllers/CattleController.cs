@@ -1,13 +1,15 @@
+using CattleManager.Infra.Repositories.CattleRepository;
+
 namespace CattleManager.Web.Controllers;
 
 [ApiController]
 [Route("api/cattle")]
 public class CattleController : ControllerBase
 {
-    private readonly IRepository<Cattle> _repository;
+    private readonly ICattleRepository _repository;
     private readonly ICattleService _service;
 
-    public CattleController(IRepository<Cattle> repository, ICattleService service)
+    public CattleController(ICattleRepository repository, ICattleService service)
     {
         _repository = repository;
         _service = service;
