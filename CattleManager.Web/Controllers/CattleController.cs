@@ -18,4 +18,8 @@ public class CattleController : ControllerBase
     [HttpPost]
     public ActionResult<ServiceResponse<Cattle>> Add([FromBody] Cattle cattle)
         => Ok(_service.Add(cattle));
+
+    [HttpGet]
+    public ActionResult<ServiceResponse<IEnumerable<Cattle>>> GetAll()
+        => Ok(_service.GetAll());
 }

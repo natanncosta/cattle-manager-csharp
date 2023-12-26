@@ -54,4 +54,9 @@ public class CattleService : ICattleService
         if (_userService.GetById(id) == null)
             throw new Exception("User not found");
     }
+
+    public ServiceResponse<IEnumerable<Cattle>> GetAll()
+    {
+        return new ServiceResponse<IEnumerable<Cattle>>(_repository.GetAll());
+    }
 }

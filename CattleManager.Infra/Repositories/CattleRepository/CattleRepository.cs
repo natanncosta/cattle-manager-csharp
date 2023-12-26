@@ -28,6 +28,5 @@ public class CattleRepository : ICattleRepository
     {
         _context.Set<Cattle>().Add(cattle);
         _context.SaveChangesAsync();
-
     }
 }
