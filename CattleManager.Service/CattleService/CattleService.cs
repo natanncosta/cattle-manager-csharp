@@ -56,7 +56,13 @@ public class CattleService : ICattleService
     }
 
     public ServiceResponse<IEnumerable<Cattle>> GetAll()
+        => new ServiceResponse<IEnumerable<Cattle>>(_repository.GetAll());
+
+    public ServiceResponse<Cattle> GetById(int id)
     {
-        return new ServiceResponse<IEnumerable<Cattle>>(_repository.GetAll());
+        Cattle cattle = _repository.GetById(id);
+        if (cattle is null)
+            return new ServiceResponse<Cattle>(false, "Cattle not found");
+        return new ServiceResponse<Cattle>(cattle);
     }
 }

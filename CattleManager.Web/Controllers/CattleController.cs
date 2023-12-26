@@ -22,4 +22,8 @@ public class CattleController : ControllerBase
     [HttpGet]
     public ActionResult<ServiceResponse<IEnumerable<Cattle>>> GetAll()
         => Ok(_service.GetAll());
+
+    [HttpGet("{id}")]
+    public ActionResult<ServiceResponse<Cattle>> GetById(int id)
+        => Ok(_service.GetById(id));
 }
