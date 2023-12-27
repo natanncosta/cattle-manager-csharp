@@ -2,11 +2,11 @@ namespace CattleManager.Domain.Models;
 
 public class Cattle : BaseEntity
 {
-    public string Name { get; private set; }
-    public string Earring { get; private set; }
-    public Gender Gender { get; private set; }
-    public int TerrainId { get; private set; }
-    public int UserId { get; private set; }
+    public string Name { get; set; }
+    public string Earring { get; set; }
+    public Gender Gender { get; set; }
+    public int TerrainId { get; set; }
+    public int UserId { get; set; }
 
     public Cattle(
         string name,

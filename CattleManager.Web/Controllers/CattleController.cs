@@ -26,4 +26,8 @@ public class CattleController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<ServiceResponse<Cattle>> GetById(int id)
         => Ok(_service.GetById(id));
+
+    [HttpPut]
+    public ActionResult<ServiceResponse<Cattle>> Update([FromBody] Cattle updatedCattle)
+        => Ok(_service.Update(updatedCattle));
 }

@@ -65,4 +65,12 @@ public class CattleService : ICattleService
             return new ServiceResponse<Cattle>(false, "Cattle not found");
         return new ServiceResponse<Cattle>(cattle);
     }
+
+    public ServiceResponse<Cattle> Update(Cattle updatedCattle)
+    {
+        if (_repository.GetByEarring(updatedCattle.Earring) is null)
+            return new ServiceResponse<Cattle>(false, "Cattle not found");
+        _repository.Update(updatedCattle);
+        return new ServiceResponse<Cattle>(updatedCattle);
+    }
 }

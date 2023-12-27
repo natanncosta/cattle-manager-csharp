@@ -16,6 +16,14 @@ public class CattleRepository : ICattleRepository
         return new List<Cattle>();
     }
 
+    public Cattle GetByEarring(string earring)
+    {
+        var query = _context.Set<Cattle>().Where(x => x.Earring == earring);
+        if (query.Any())
+            return query.FirstOrDefault()!;
+        return null!;
+    }
+
     public Cattle GetById(int id)
     {
         var query = _context.Set<Cattle>().Where(x => x.Id == id);
@@ -27,6 +35,16 @@ public class CattleRepository : ICattleRepository
     public void Save(Cattle cattle)
     {
         _context.Set<Cattle>().Add(cattle);
+        _context.SaveChangesAsync();
+    }
+
+    public void Update(Cattle updatedCattle)
+    {
+        var cattle = _context.Set<Cattle>().FirstOrDefault(c => c.Earring == updatedCattle.Earring)!;
+        cattle.Name = updatedCattle.Name;
+        cattle.UserId = updatedCattle.UserId;
+        cattle.TerrainId = updatedCattle.TerrainId;
+        cattle.Earring = updatedCattle.Earring;
         _context.SaveChangesAsync();
     }
 }
