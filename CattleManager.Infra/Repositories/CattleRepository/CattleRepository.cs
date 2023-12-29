@@ -8,6 +8,12 @@ public class CattleRepository : ICattleRepository
     public CattleRepository(AppDbContext context)
     { _context = context; }
 
+    public void Delete(int id)
+    {
+        _context.Set<Cattle>().Remove(GetById(id));
+        _context.SaveChangesAsync();
+    }
+
     public IEnumerable<Cattle> GetAll()
     {
         var query = _context.Set<Cattle>();

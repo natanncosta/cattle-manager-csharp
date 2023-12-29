@@ -7,4 +7,5 @@ public interface ICattleRepository
     void Save(Cattle cattle);
     void Update(Cattle updatedCattle);
     Cattle GetByEarring(string earring);
+    void Delete(int id);
 }

@@ -30,4 +30,8 @@ public class CattleController : ControllerBase
     [HttpPut]
     public ActionResult<ServiceResponse<Cattle>> Update([FromBody] Cattle updatedCattle)
         => Ok(_service.Update(updatedCattle));
+
+    [HttpDelete("{id}")]
+    public ActionResult<ServiceResponse<Cattle>> Delete(int id)
+        => Ok(_service.Delete(id));
 }

@@ -73,4 +73,13 @@ public class CattleService : ICattleService
         _repository.Update(updatedCattle);
         return new ServiceResponse<Cattle>(updatedCattle);
     }
+
+    public ServiceResponse<Cattle> Delete(int id)
+    {
+        Cattle cattle = _repository.GetById(id);
+        if (cattle is null)
+            return new ServiceResponse<Cattle>(false, "Cattle not found");
+        _repository.Delete(id);
+        return new ServiceResponse<Cattle>(true, "Cattle deleted with success");
+    }
 }
